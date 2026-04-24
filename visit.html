@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visit Us — Witter Coin | 2299 Lombard St, San Francisco</title>
+<meta name="description" content="Visit Witter Coin at 2299 Lombard Street, San Francisco. Open Mon–Fri 10AM–5:30PM, Sat 10AM–2PM. Free parking. Free appraisals. (415) 781-5690."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: { extend: { colors: { gold: "#D4AF37", "gold-light": "#e9c176", "gold-dark": "#b8962e", "surface": "#101415", "surface-high": "#272a2c", "surface-mid": "#1d2022", "outline-dim": "#45464d" }, fontFamily: { serif: ["Noto Serif","Georgia","serif"], sans: ["Manrope","system-ui","sans-serif"] } } }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  html { scroll-behavior: smooth; }
+  body { background-color: #101415; color: #e0e3e5; font-family: 'Manrope', sans-serif; }
+  .gold-divider { width: 60px; height: 2px; background: #D4AF37; }
+  .nav-dropdown { display: none; }
+  .nav-item:hover .nav-dropdown { display: block; }
+  ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: #101415; } ::-webkit-scrollbar-thumb { background: #45464d; } ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+</style>
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="bg-gold text-center py-2 px-4">
+  <p class="text-slate-900 text-xs font-sans font-semibold tracking-wide">
+    <span class="material-symbols-outlined align-middle mr-1" style="font-size:14px">location_on</span>
+    Open to the Public · 2299 Lombard St, San Francisco · Mon–Fri 10AM–5:30PM · Sat 10AM–2PM ·
+    <a href="tel:4157815690" class="hidden sm:inline underline hover:no-underline ml-1">(415) 781-5690</a>
+  </p>
+</div>
+
+<!-- Nav -->
+<header id="main-nav" class="bg-[#0F172A] sticky top-0 z-50 border-b border-slate-800 shadow-2xl">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-10 flex items-center justify-between h-16">
+    <a href="index.html" class="flex items-center gap-3 shrink-0">
+      <div class="w-8 h-8 rounded-full bg-gold flex items-center justify-center"><span class="text-slate-900 font-serif font-bold text-sm">W</span></div>
+      <span class="font-serif font-bold text-xl text-gold tracking-tight">Witter Coin</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-1">
+      <div class="nav-item relative">
+        <a href="shop.html" class="flex items-center gap-1 font-sans text-sm text-slate-300 hover:text-white px-3 py-2 rounded hover:bg-slate-800 transition-colors">Shop <span class="material-symbols-outlined text-slate-500" style="font-size:16px">expand_more</span></a>
+        <div class="nav-dropdown absolute top-full left-0 mt-1 w-56 bg-slate-900 border border-slate-700 shadow-2xl rounded-sm z-50 py-2">
+          <a href="shop.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800">Rare Coins</a>
+          <a href="shop.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800">Gold Coins</a>
+          <a href="shop.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800">Silver Coins</a>
+          <a href="shop.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800">Bullion</a>
+          <a href="shop.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800">Paper Money</a>
+          <a href="shop.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800">Watches & Jewelry</a>
+        </div>
+      </div>
+      <a href="sell-to-us.html" class="font-sans text-sm text-slate-300 hover:text-white px-3 py-2 rounded hover:bg-slate-800 transition-colors">Sell to Us</a>
+      <a href="shop.html" class="font-sans text-sm text-slate-300 hover:text-white px-3 py-2 rounded hover:bg-slate-800 transition-colors">Auctions</a>
+      <a href="about.html" class="font-sans text-sm text-slate-300 hover:text-white px-3 py-2 rounded hover:bg-slate-800 transition-colors">About</a>
+      <a href="visit.html" class="font-sans text-sm text-gold border-b border-gold px-3 py-2 transition-colors">Visit</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="sell-to-us.html" class="hidden md:flex items-center gap-1.5 bg-gold hover:bg-gold-dark text-slate-900 font-sans font-bold text-xs uppercase tracking-widest px-4 py-2 transition-colors">Free Appraisal</a>
+      <button class="material-symbols-outlined text-slate-400 hover:text-gold p-2 transition-colors" style="font-size:22px">shopping_cart</button>
+      <button id="mobile-menu-btn" class="lg:hidden material-symbols-outlined text-slate-400 hover:text-gold p-2 transition-colors" style="font-size:22px">menu</button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-t border-slate-800 px-6 py-4 space-y-1">
+    <a href="shop.html" class="block font-sans text-sm text-slate-300 hover:text-gold py-2 border-b border-slate-800">Shop All</a>
+    <a href="sell-to-us.html" class="block font-sans text-sm text-slate-300 hover:text-gold py-2 border-b border-slate-800">Sell to Us</a>
+    <a href="about.html" class="block font-sans text-sm text-slate-300 hover:text-gold py-2 border-b border-slate-800">About</a>
+    <a href="visit.html" class="block font-sans text-sm text-gold py-2">Visit Us</a>
+    <div class="pt-3"><a href="sell-to-us.html" class="block text-center bg-gold text-slate-900 font-bold text-xs uppercase tracking-widest py-3">Free Appraisal</a></div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="relative py-20 lg:py-28 bg-[#0c0f10] overflow-hidden">
+  <div class="absolute inset-0 opacity-5" style="background: radial-gradient(ellipse at 50% 50%, #D4AF37, transparent 60%);"></div>
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16 relative z-10 text-center">
+    <div class="flex items-center justify-center gap-3 mb-5">
+      <div class="gold-divider"></div>
+      <span class="font-sans text-xs text-gold uppercase tracking-[0.2em] font-semibold">Marina / Cow Hollow</span>
+      <div class="gold-divider"></div>
+    </div>
+    <h1 class="font-serif text-5xl lg:text-7xl font-bold text-white mb-6">Visit Our Showroom</h1>
+    <p class="font-sans text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">Safe, welcoming, and open to the public six days a week. Walk-ins always welcome. Free parking on site.</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="https://maps.google.com/?q=2299+Lombard+St+San+Francisco+CA" target="_blank" class="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-slate-900 font-sans font-bold text-sm uppercase tracking-widest px-8 py-4 transition-colors">
+        <span class="material-symbols-outlined" style="font-size:18px">directions</span>
+        Get Directions
+      </a>
+      <a href="tel:4157815690" class="inline-flex items-center gap-2 border border-outline-dim hover:border-gold text-slate-300 hover:text-gold font-sans font-semibold text-sm px-6 py-4 transition-colors">
+        <span class="material-symbols-outlined" style="font-size:18px">call</span>
+        (415) 781-5690
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Map + Info -->
+<section class="py-16 bg-surface">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16">
+    <div class="grid lg:grid-cols-3 gap-6">
+
+      <!-- Map -->
+      <div class="lg:col-span-2 bg-surface-high border border-outline-dim overflow-hidden">
+        <div class="w-full" style="height: 420px;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0!2d-122.4394!3d37.7993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580e3b0b0b0b0%3A0x0!2s2299+Lombard+St%2C+San+Francisco%2C+CA+94123!5e0!3m2!1sen!2sus!4v1"
+            width="100%" height="100%"
+            style="border:0; filter: invert(90%) hue-rotate(180deg) saturate(0.5);"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Witter Coin Location">
+          </iframe>
+        </div>
+        <div class="p-6 flex flex-wrap gap-6 items-center justify-between border-t border-outline-dim">
+          <div>
+            <p class="font-serif text-xl font-semibold text-white">2299 Lombard Street</p>
+            <p class="font-sans text-sm text-slate-400 mt-0.5">San Francisco, CA 94123 · at Pierce Street</p>
+            <p class="font-sans text-xs text-slate-500 mt-1">Marina / Cow Hollow District</p>
+          </div>
+          <a href="https://maps.google.com/?q=2299+Lombard+St+San+Francisco+CA" target="_blank"
+            class="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-slate-900 font-sans font-bold text-xs uppercase tracking-widest px-5 py-2.5 transition-colors">
+            <span class="material-symbols-outlined" style="font-size:16px">directions</span>
+            Open in Maps
+          </a>
+        </div>
+      </div>
+
+      <!-- Info sidebar -->
+      <div class="flex flex-col gap-4">
+
+        <!-- Hours -->
+        <div class="bg-surface-high border border-outline-dim p-6">
+          <div class="flex items-center gap-2 mb-5">
+            <span class="material-symbols-outlined text-gold" style="font-size:22px">schedule</span>
+            <h3 class="font-serif text-lg font-bold text-white">Store Hours</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center py-2 border-b border-outline-dim/40">
+              <span class="font-sans text-sm text-slate-400">Monday</span>
+              <span class="font-sans text-sm font-semibold text-white">10:00 AM – 5:30 PM</span>
+            </div>
+            <div class="flex justify-between items-center py-2 border-b border-outline-dim/40">
+              <span class="font-sans text-sm text-slate-400">Tuesday</span>
+              <span class="font-sans text-sm font-semibold text-white">10:00 AM – 5:30 PM</span>
+            </div>
+            <div class="flex justify-between items-center py-2 border-b border-outline-dim/40">
+              <span class="font-sans text-sm text-slate-400">Wednesday</span>
+              <span class="font-sans text-sm font-semibold text-white">10:00 AM – 5:30 PM</span>
+            </div>
+            <div class="flex justify-between items-center py-2 border-b border-outline-dim/40">
+              <span class="font-sans text-sm text-slate-400">Thursday</span>
+              <span class="font-sans text-sm font-semibold text-white">10:00 AM – 5:30 PM</span>
+            </div>
+            <div class="flex justify-between items-center py-2 border-b border-outline-dim/40">
+              <span class="font-sans text-sm text-slate-400">Friday</span>
+              <span class="font-sans text-sm font-semibold text-white">10:00 AM – 5:30 PM</span>
+            </div>
+            <div class="flex justify-between items-center py-2 border-b border-outline-dim/40">
+              <span class="font-sans text-sm text-slate-400">Saturday</span>
+              <span class="font-sans text-sm font-semibold text-white">10:00 AM – 2:00 PM</span>
+            </div>
+            <div class="flex justify-between items-center py-2">
+              <span class="font-sans text-sm text-slate-400">Sunday</span>
+              <span class="font-sans text-sm text-slate-600">Closed</span>
+            </div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-outline-dim flex items-center gap-2">
+            <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+            <span class="font-sans text-xs text-green-400 font-semibold">Open Today</span>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="bg-surface-high border border-outline-dim p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined text-gold" style="font-size:22px">contact_phone</span>
+            <h3 class="font-serif text-lg font-bold text-white">Contact Us</h3>
+          </div>
+          <div class="space-y-3">
+            <a href="tel:4157815690" class="flex items-center gap-3 text-slate-300 hover:text-gold transition-colors group">
+              <span class="material-symbols-outlined text-slate-600 group-hover:text-gold transition-colors" style="font-size:18px">call</span>
+              <span class="font-sans text-sm font-semibold">(415) 781-5690</span>
+            </a>
+            <a href="mailto:sales@wittercoin.com" class="flex items-center gap-3 text-slate-300 hover:text-gold transition-colors group">
+              <span class="material-symbols-outlined text-slate-600 group-hover:text-gold transition-colors" style="font-size:18px">mail</span>
+              <span class="font-sans text-sm">sales@wittercoin.com</span>
+            </a>
+            <div class="flex items-center gap-3 text-slate-400">
+              <span class="material-symbols-outlined text-slate-600" style="font-size:18px">local_parking</span>
+              <span class="font-sans text-sm">Free onsite parking available</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-400">
+              <span class="material-symbols-outlined text-slate-600" style="font-size:18px">accessible</span>
+              <span class="font-sans text-sm">Wheelchair accessible</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Directions -->
+<section class="py-16 bg-[#0c0f10] border-t border-outline-dim">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16">
+    <div class="text-center mb-10">
+      <div class="flex items-center justify-center gap-3 mb-3">
+        <div class="gold-divider"></div>
+        <span class="font-sans text-xs text-gold uppercase tracking-[0.2em] font-semibold">Getting Here</span>
+        <div class="gold-divider"></div>
+      </div>
+      <h2 class="font-serif text-3xl font-bold text-white">Directions</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="bg-surface-high border border-outline-dim p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="material-symbols-outlined text-gold" style="font-size:20px">directions_car</span>
+          <h4 class="font-serif text-base font-bold text-white">From Bay Bridge</h4>
+        </div>
+        <p class="font-sans text-sm text-slate-400 leading-relaxed">Take the Van Ness exit. Turn left on Lombard Street. Continue to Lombard & Pierce Street.</p>
+      </div>
+      <div class="bg-surface-high border border-outline-dim p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="material-symbols-outlined text-gold" style="font-size:20px">directions_car</span>
+          <h4 class="font-serif text-base font-bold text-white">From Golden Gate</h4>
+        </div>
+        <p class="font-sans text-sm text-slate-400 leading-relaxed">Follow US-101 South onto Lombard Street. Continue east to Lombard & Pierce Street.</p>
+      </div>
+      <div class="bg-surface-high border border-outline-dim p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="material-symbols-outlined text-gold" style="font-size:20px">directions_bus</span>
+          <h4 class="font-serif text-base font-bold text-white">By Muni</h4>
+        </div>
+        <p class="font-sans text-sm text-slate-400 leading-relaxed">Take the 28, 30, or 43 bus lines. Stop at Lombard & Pierce. Short walk to our entrance.</p>
+      </div>
+      <div class="bg-surface-high border border-outline-dim p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="material-symbols-outlined text-gold" style="font-size:20px">local_parking</span>
+          <h4 class="font-serif text-base font-bold text-white">Parking</h4>
+        </div>
+        <p class="font-sans text-sm text-slate-400 leading-relaxed">Free onsite parking available in our lot. Street parking also available on Lombard and Pierce.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What to Expect -->
+<section class="py-20 bg-surface border-t border-outline-dim">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16">
+    <div class="text-center mb-12">
+      <div class="flex items-center justify-center gap-3 mb-3">
+        <div class="gold-divider"></div>
+        <span class="font-sans text-xs text-gold uppercase tracking-[0.2em] font-semibold">Your Visit</span>
+        <div class="gold-divider"></div>
+      </div>
+      <h2 class="font-serif text-4xl font-bold text-white">What to Expect</h2>
+      <p class="font-sans text-slate-400 mt-3 max-w-xl mx-auto">Whether you're buying, selling, or just curious — you're always welcome at Witter Coin.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-surface-high border border-outline-dim p-7">
+        <span class="material-symbols-outlined text-gold mb-4 block" style="font-size:28px">storefront</span>
+        <h3 class="font-serif text-xl font-bold text-white mb-2">World-Class Showroom</h3>
+        <p class="font-sans text-sm text-slate-400 leading-relaxed">Browse our curated inventory of rare coins, gold, silver, bullion, paper money, and fine watches in a secure, welcoming environment.</p>
+      </div>
+      <div class="bg-surface-high border border-outline-dim p-7">
+        <span class="material-symbols-outlined text-gold mb-4 block" style="font-size:28px">verified</span>
+        <h3 class="font-serif text-xl font-bold text-white mb-2">Free Appraisals</h3>
+        <p class="font-sans text-sm text-slate-400 leading-relaxed">Bring in anything you'd like evaluated. Our expert numismatists will examine your items at no charge, with no obligation to sell.</p>
+      </div>
+      <div class="bg-surface-high border border-outline-dim p-7">
+        <span class="material-symbols-outlined text-gold mb-4 block" style="font-size:28px">school</span>
+        <h3 class="font-serif text-xl font-bold text-white mb-2">Expert Guidance</h3>
+        <p class="font-sans text-sm text-slate-400 leading-relaxed">Our 28-person team includes some of the most knowledgeable numismatists in the country. Ask us anything — we love talking coins.</p>
+      </div>
+      <div class="bg-surface-high border border-outline-dim p-7">
+        <span class="material-symbols-outlined text-gold mb-4 block" style="font-size:28px">security</span>
+        <h3 class="font-serif text-xl font-bold text-white mb-2">Safe & Secure</h3>
+        <p class="font-sans text-sm text-slate-400 leading-relaxed">Our showroom is fully secured with professional security systems. You and your items are always safe with us.</p>
+      </div>
+      <div class="bg-surface-high border border-outline-dim p-7">
+        <span class="material-symbols-outlined text-gold mb-4 block" style="font-size:28px">local_parking</span>
+        <h3 class="font-serif text-xl font-bold text-white mb-2">Free Parking</h3>
+        <p class="font-sans text-sm text-slate-400 leading-relaxed">We have free onsite parking available for all visitors. No need to worry about meters or garages.</p>
+      </div>
+      <div class="bg-surface-high border border-outline-dim p-7">
+        <span class="material-symbols-outlined text-gold mb-4 block" style="font-size:28px">waving_hand</span>
+        <h3 class="font-serif text-xl font-bold text-white mb-2">Walk-Ins Welcome</h3>
+        <p class="font-sans text-sm text-slate-400 leading-relaxed">No appointment needed. Just stop by during store hours. For large collections, calling ahead is appreciated but never required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA strip -->
+<section class="py-16 bg-[#0F172A] border-y border-outline-dim">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+      <div>
+        <h2 class="font-serif text-3xl font-bold text-white mb-2">Ready to Come In?</h2>
+        <p class="font-sans text-slate-400 text-sm">We're open six days a week. No appointment needed.</p>
+      </div>
+      <div class="flex flex-wrap gap-4 shrink-0">
+        <a href="https://maps.google.com/?q=2299+Lombard+St+San+Francisco+CA" target="_blank"
+          class="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-slate-900 font-sans font-bold text-sm uppercase tracking-widest px-8 py-4 transition-colors">
+          <span class="material-symbols-outlined" style="font-size:18px">directions</span>
+          Get Directions
+        </a>
+        <a href="sell-to-us.html" class="inline-flex items-center gap-2 border border-outline-dim hover:border-gold text-slate-300 hover:text-gold font-sans font-semibold text-sm uppercase tracking-widest px-6 py-4 transition-colors">
+          Sell to Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#020617] border-t border-slate-800 py-10 px-6 lg:px-16">
+  <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-2">
+      <div class="w-6 h-6 rounded-full bg-gold flex items-center justify-center"><span class="text-slate-900 font-serif font-bold text-xs">W</span></div>
+      <span class="font-serif font-bold text-gold">Witter Coin</span>
+    </div>
+    <div class="flex flex-wrap justify-center gap-6">
+      <a href="shop.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Shop</a>
+      <a href="sell-to-us.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Sell to Us</a>
+      <a href="about.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">About</a>
+      <a href="visit.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Visit</a>
+      <a href="tel:4157815690" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">(415) 781-5690</a>
+    </div>
+    <p class="font-sans text-xs text-slate-600">© 2024 Witter Coin. Member of PNG and ANA.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+</script>
+</body>
+</html>

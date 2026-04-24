@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Story — Witter Coin | San Francisco Since 1960</title>
+<meta name="description" content="Learn about Witter Coin's 65-year history, Seth Chandler's numismatic credentials, and our commitment to collectors through Witter Coin University."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: { extend: { colors: { gold: "#D4AF37", "gold-light": "#e9c176", "gold-dark": "#b8962e", "surface": "#101415", "surface-high": "#272a2c", "surface-mid": "#1d2022", "outline-dim": "#45464d" }, fontFamily: { serif: ["Noto Serif","Georgia","serif"], sans: ["Manrope","system-ui","sans-serif"] } } }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  html { scroll-behavior: smooth; }
+  body { background-color: #101415; color: #e0e3e5; font-family: 'Manrope', sans-serif; }
+  .gold-divider { width: 60px; height: 2px; background: #D4AF37; }
+  .nav-dropdown { display: none; }
+  .nav-item:hover .nav-dropdown { display: block; }
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: #101415; } ::-webkit-scrollbar-thumb { background: #45464d; } ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+</style>
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="bg-gold text-center py-2 px-4">
+  <p class="text-slate-900 text-xs font-sans font-semibold tracking-wide">
+    <span class="material-symbols-outlined align-middle mr-1" style="font-size:14px">location_on</span>
+    Open to the Public · 2299 Lombard St, San Francisco · Mon–Fri 10AM–5:30PM · Sat 10AM–2PM ·
+    <a href="tel:4157815690" class="hidden sm:inline underline hover:no-underline ml-1">(415) 781-5690</a>
+  </p>
+</div>
+
+<!-- Nav -->
+<header id="main-nav" class="bg-[#0F172A] sticky top-0 z-50 border-b border-slate-800 shadow-2xl">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-10 flex items-center justify-between h-16">
+    <a href="index.html" class="flex items-center gap-3 shrink-0">
+      <div class="w-8 h-8 rounded-full bg-gold flex items-center justify-center"><span class="text-slate-900 font-serif font-bold text-sm">W</span></div>
+      <span class="font-serif font-bold text-xl text-gold tracking-tight">Witter Coin</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-1">
+      <div class="nav-item relative">
+        <a href="shop.html" class="flex items-center gap-1 font-sans text-sm text-slate-300 hover:text-white px-3 py-2 rounded hover:bg-slate-800 transition-colors">Shop <span class="material-symbols-outlined text-slate-500" style="font-size:16px">expand_more</span></a>
+        <div class="nav-dropdown absolute top-full left-0 mt-1 w-56 bg-slate-900 border border-slate-700 shadow-2xl rounded-sm z-50 py-2">
+          <a href="shop.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800">Rare Coins</a>
+          <a href="shop.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800">Gold Coins</a>
+          <a href="shop.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800">Silver Coins</a>
+          <a href="shop.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800">Bullion</a>
+          <a href="shop.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800">Paper Money</a>
+          <a href="shop.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800">Watches & Jewelry</a>
+        </div>
+      </div>
+      <a href="sell-to-us.html" class="font-sans text-sm text-slate-300 hover:text-white px-3 py-2 rounded hover:bg-slate-800 transition-colors">Sell to Us</a>
+      <a href="shop.html" class="font-sans text-sm text-slate-300 hover:text-white px-3 py-2 rounded hover:bg-slate-800 transition-colors">Auctions</a>
+      <a href="about.html" class="font-sans text-sm text-gold border-b border-gold px-3 py-2 transition-colors">About</a>
+      <a href="visit.html" class="font-sans text-sm text-slate-300 hover:text-white px-3 py-2 rounded hover:bg-slate-800 transition-colors">Visit</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="sell-to-us.html" class="hidden md:flex items-center gap-1.5 bg-gold hover:bg-gold-dark text-slate-900 font-sans font-bold text-xs uppercase tracking-widest px-4 py-2 transition-colors">Free Appraisal</a>
+      <button class="material-symbols-outlined text-slate-400 hover:text-gold p-2 transition-colors" style="font-size:22px">shopping_cart</button>
+      <button id="mobile-menu-btn" class="lg:hidden material-symbols-outlined text-slate-400 hover:text-gold p-2 transition-colors" style="font-size:22px">menu</button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-t border-slate-800 px-6 py-4 space-y-1">
+    <a href="shop.html" class="block font-sans text-sm text-slate-300 hover:text-gold py-2 border-b border-slate-800">Shop All</a>
+    <a href="sell-to-us.html" class="block font-sans text-sm text-slate-300 hover:text-gold py-2 border-b border-slate-800">Sell to Us</a>
+    <a href="about.html" class="block font-sans text-sm text-gold py-2 border-b border-slate-800">About</a>
+    <a href="visit.html" class="block font-sans text-sm text-slate-300 hover:text-gold py-2">Visit Us</a>
+    <div class="pt-3"><a href="sell-to-us.html" class="block text-center bg-gold text-slate-900 font-bold text-xs uppercase tracking-widest py-3">Free Appraisal</a></div>
+  </div>
+</header>
+
+<!-- Page Hero -->
+<section class="relative py-24 lg:py-32 bg-[#0c0f10] overflow-hidden">
+  <div class="absolute inset-0 opacity-5" style="background: radial-gradient(ellipse at 70% 50%, #D4AF37, transparent 60%);"></div>
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16 relative z-10">
+    <div class="flex items-center gap-3 mb-5">
+      <div class="gold-divider"></div>
+      <span class="font-sans text-xs text-gold uppercase tracking-[0.2em] font-semibold">San Francisco · Est. 1960</span>
+    </div>
+    <h1 class="font-serif text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">Our Story</h1>
+    <p class="font-sans text-xl text-slate-400 max-w-2xl leading-relaxed">65 years of numismatic excellence, community, and an unwavering commitment to collectors at every level.</p>
+  </div>
+</section>
+
+<!-- Founding Story -->
+<section class="py-20 lg:py-28 bg-surface">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="fade-in">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="gold-divider"></div>
+          <span class="font-sans text-xs text-gold uppercase tracking-[0.2em] font-semibold">The Beginning</span>
+        </div>
+        <h2 class="font-serif text-4xl font-bold text-white mb-6">Founded by a Legend</h2>
+        <p class="font-sans text-slate-400 leading-relaxed mb-5">In 1959, legendary numismatist <strong class="text-white">Dean Witter</strong> created an innovative coin album to hold US Proof Sets. With the success of the albums, the following year Dean decided to open Witter Coin in a small store on Bush and Kearny streets in San Francisco's Financial District.</p>
+        <p class="font-sans text-slate-400 leading-relaxed mb-5">Dean later moved to the historic Hobart Building on Market Street in 1982, cementing Witter Coin's place as a San Francisco institution.</p>
+        <p class="font-sans text-slate-400 leading-relaxed">Today, Witter Coin operates from its showroom at 2299 Lombard Street in the Marina/Cow Hollow District — a safe, welcoming space open to the public six days a week.</p>
+      </div>
+      <div class="fade-in">
+        <div class="relative bg-surface-high border border-outline-dim p-12 flex items-center justify-center aspect-square max-w-md mx-auto">
+          <div class="text-center">
+            <div class="font-serif text-8xl font-bold text-gold/20 mb-4">1960</div>
+            <div class="gold-divider mx-auto mb-4"></div>
+            <p class="font-serif text-2xl font-semibold text-white">Witter Coin</p>
+            <p class="font-sans text-sm text-slate-500 mt-2">San Francisco, California</p>
+          </div>
+          <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold/60"></div>
+          <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-gold/60"></div>
+          <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-gold/60"></div>
+          <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-gold/60"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="py-20 bg-[#0c0f10]">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16">
+    <div class="text-center mb-14 fade-in">
+      <div class="flex items-center justify-center gap-3 mb-3">
+        <div class="gold-divider"></div>
+        <span class="font-sans text-xs text-gold uppercase tracking-[0.2em] font-semibold">History</span>
+        <div class="gold-divider"></div>
+      </div>
+      <h2 class="font-serif text-4xl font-bold text-white">65 Years of Excellence</h2>
+    </div>
+    <div class="relative">
+      <div class="absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-outline-dim hidden lg:block"></div>
+      <div class="space-y-12">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center fade-in">
+          <div class="lg:text-right">
+            <span class="font-serif text-5xl font-bold text-gold/30">1959</span>
+            <h3 class="font-serif text-xl font-bold text-white mt-2">The Coin Album</h3>
+            <p class="font-sans text-sm text-slate-400 mt-2 leading-relaxed">Dean Witter creates an innovative coin album for US Proof Sets, sparking the idea for a coin shop.</p>
+          </div>
+          <div class="hidden lg:block"></div>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center fade-in">
+          <div class="hidden lg:block"></div>
+          <div>
+            <span class="font-serif text-5xl font-bold text-gold/30">1960</span>
+            <h3 class="font-serif text-xl font-bold text-white mt-2">Witter Coin Opens</h3>
+            <p class="font-sans text-sm text-slate-400 mt-2 leading-relaxed">Dean opens Witter Coin on Bush & Kearny in San Francisco's Financial District.</p>
+          </div>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center fade-in">
+          <div class="lg:text-right">
+            <span class="font-serif text-5xl font-bold text-gold/30">1982</span>
+            <h3 class="font-serif text-xl font-bold text-white mt-2">The Hobart Building</h3>
+            <p class="font-sans text-sm text-slate-400 mt-2 leading-relaxed">Witter Coin moves to the historic Hobart Building on Market Street, expanding its presence.</p>
+          </div>
+          <div class="hidden lg:block"></div>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center fade-in">
+          <div class="hidden lg:block"></div>
+          <div>
+            <span class="font-serif text-5xl font-bold text-gold/30">2021</span>
+            <h3 class="font-serif text-xl font-bold text-white mt-2">Witter Coin University</h3>
+            <p class="font-sans text-sm text-slate-400 mt-2 leading-relaxed">Seth Chandler founds WCU, a nonprofit bringing 40 Young Numismatists to SF annually on full scholarships.</p>
+          </div>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center fade-in">
+          <div class="lg:text-right">
+            <span class="font-serif text-5xl font-bold text-gold/30">Today</span>
+            <h3 class="font-serif text-xl font-bold text-white mt-2">2299 Lombard Street</h3>
+            <p class="font-sans text-sm text-slate-400 mt-2 leading-relaxed">28 employees, a world-class inventory, and a mission to serve every collector — from $1 to $1,000,000.</p>
+          </div>
+          <div class="hidden lg:block"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seth Chandler Full Bio -->
+<section class="py-20 lg:py-28 bg-surface">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16">
+    <div class="grid lg:grid-cols-5 gap-16">
+      <!-- Sidebar -->
+      <div class="lg:col-span-2 fade-in">
+        <div class="relative bg-surface-high border border-outline-dim p-10 flex flex-col items-center text-center mb-6">
+          <div class="w-28 h-28 rounded-full bg-gold/10 border-2 border-gold/40 flex items-center justify-center mb-5">
+            <span class="font-serif text-4xl font-bold text-gold">SC</span>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-white">Seth Chandler</h3>
+          <p class="font-sans text-sm text-gold mt-1">Owner & Chief Numismatist</p>
+          <div class="gold-divider mx-auto my-5"></div>
+          <p class="font-sans text-xs text-slate-500 leading-relaxed">Witter Coin · San Francisco, CA</p>
+          <div class="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-gold/60"></div>
+          <div class="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-gold/60"></div>
+          <div class="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-gold/60"></div>
+          <div class="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-gold/60"></div>
+        </div>
+        <!-- Credentials -->
+        <div class="space-y-3">
+          <div class="bg-surface-high border border-outline-dim p-4 flex items-start gap-3">
+            <span class="material-symbols-outlined text-gold shrink-0 mt-0.5" style="font-size:18px">military_tech</span>
+            <div>
+              <p class="font-sans text-xs font-bold text-white uppercase tracking-wider">Coin World</p>
+              <p class="font-sans text-xs text-slate-500 mt-0.5">Top 100 Numismatists of All Time (multiple times)</p>
+            </div>
+          </div>
+          <div class="bg-surface-high border border-outline-dim p-4 flex items-start gap-3">
+            <span class="material-symbols-outlined text-gold shrink-0 mt-0.5" style="font-size:18px">grade</span>
+            <div>
+              <p class="font-sans text-xs font-bold text-white uppercase tracking-wider">COINage Magazine</p>
+              <p class="font-sans text-xs text-slate-500 mt-0.5">Greatest Coin Graders of All Time</p>
+            </div>
+          </div>
+          <div class="bg-surface-high border border-outline-dim p-4 flex items-start gap-3">
+            <span class="material-symbols-outlined text-gold shrink-0 mt-0.5" style="font-size:18px">verified_user</span>
+            <div>
+              <p class="font-sans text-xs font-bold text-white uppercase tracking-wider">CAC Grading</p>
+              <p class="font-sans text-xs text-slate-500 mt-0.5">Co-Founder & Guest Grader</p>
+            </div>
+          </div>
+          <div class="bg-surface-high border border-outline-dim p-4 flex items-start gap-3">
+            <span class="material-symbols-outlined text-gold shrink-0 mt-0.5" style="font-size:18px">account_balance</span>
+            <div>
+              <p class="font-sans text-xs font-bold text-white uppercase tracking-wider">ANA</p>
+              <p class="font-sans text-xs text-slate-500 mt-0.5">Board of Governors · Summer Seminar Instructor</p>
+            </div>
+          </div>
+          <div class="bg-surface-high border border-outline-dim p-4 flex items-start gap-3">
+            <span class="material-symbols-outlined text-gold shrink-0 mt-0.5" style="font-size:18px">menu_book</span>
+            <div>
+              <p class="font-sans text-xs font-bold text-white uppercase tracking-wider">Red Book</p>
+              <p class="font-sans text-xs text-slate-500 mt-0.5">Contributing Author — World's Best-Selling Coin Guide</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bio text -->
+      <div class="lg:col-span-3 fade-in">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="gold-divider"></div>
+          <span class="font-sans text-xs text-gold uppercase tracking-[0.2em] font-semibold">Leadership</span>
+        </div>
+        <h2 class="font-serif text-4xl font-bold text-white mb-2">Meet Seth Chandler</h2>
+        <p class="font-serif text-xl text-gold-light italic mb-8">A Lifelong Numismatist</p>
+
+        <div class="space-y-5 font-sans text-slate-400 leading-relaxed">
+          <p>Seth Chandler is the owner and chief numismatist of Witter Coin, America's coin shop. They have proudly served collectors since 1960 in San Francisco. Seth leads one of the most dynamic and community-focused coin shops in the country along with his 28 employees.</p>
+          <p>Seth is a lifelong numismatist who has been recognized multiple times by <em class="text-slate-300">Coin World</em> as one of the <strong class="text-white">Top 100 Numismatists of All Time</strong>. He was also recognized as one of the "Greatest Coin Graders Of All Time" by <em class="text-slate-300">COINage</em> magazine. He has built some of the finest coin collections in the nation and is a contributor to the iconic <em class="text-slate-300">Red Book</em>, the world's best-selling price guide and reference for U.S. coins.</p>
+          <p>Seth is a co-founder and guest grader at <strong class="text-white">CAC Grading</strong>, the world's finest coin grading and authentication company. He also serves on the Board of Governors for the <strong class="text-white">American Numismatic Association (ANA)</strong> — the world's largest coin club. He's also an instructor for Advanced Coin Dealing at the ANA's prestigious Summer Seminar.</p>
+          <p>Seth also founded the <strong class="text-white">San Francisco Coin Club</strong>, also known as "The Club with the Most Coolest Coin Nerds in the World." He is one of the top sellers of coins and bullion on the livestreaming platforms, Whatnot and eBay Live. He also created the most popular social media account for a coin shop, bringing numismatics to a whole new audience.</p>
+          <p>Seth is the creator of the annual <strong class="text-white">San Francisco Coin Scavenger Hunt</strong>. Seth hides $50,000 worth of coins across iconic locations all over the city during National Coin Week. This draws coverage from all four local news stations as well as the international press.</p>
+        </div>
+
+        <div class="mt-10 p-6 border-l-2 border-gold bg-surface-high">
+          <p class="font-serif text-lg italic text-slate-300 leading-relaxed">"Whether it's a $1 coin or a $1,000,000 rarity — every collector deserves expert guidance and a fair deal."</p>
+          <p class="font-sans text-xs text-gold mt-3 uppercase tracking-widest">— Seth Chandler, Owner</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WCU Section -->
+<section class="py-20 lg:py-28 bg-[#0c0f10]">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="fade-in">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="gold-divider"></div>
+          <span class="font-sans text-xs text-gold uppercase tracking-[0.2em] font-semibold">Giving Back</span>
+        </div>
+        <h2 class="font-serif text-4xl font-bold text-white mb-6">Witter Coin University</h2>
+        <p class="font-sans text-slate-400 leading-relaxed mb-5">In 2021, Seth founded <strong class="text-white">Witter Coin University (WCU)</strong>, a nonprofit that brings Young Numismatists (ages 14–20) to San Francisco for an all-expense-paid week of hands-on learning, mentorship, and immersion in the world of coins.</p>
+        <p class="font-sans text-slate-400 leading-relaxed mb-5">Every year they raise over <strong class="text-white">$200,000</strong> to provide <strong class="text-white">40 scholarships</strong> to Young Numismatists. Seth's dedication to education extends to his shop, where he hires around 10 interns each summer to learn and work alongside the Witter Coin team.</p>
+        <div class="grid grid-cols-3 gap-4 mt-8">
+          <div class="text-center bg-surface-high border border-outline-dim p-5">
+            <div class="font-serif text-3xl font-bold text-gold">40</div>
+            <div class="font-sans text-xs text-slate-500 mt-1 uppercase tracking-wider">Scholarships/Year</div>
+          </div>
+          <div class="text-center bg-surface-high border border-outline-dim p-5">
+            <div class="font-serif text-3xl font-bold text-gold">$200K</div>
+            <div class="font-sans text-xs text-slate-500 mt-1 uppercase tracking-wider">Raised Annually</div>
+          </div>
+          <div class="text-center bg-surface-high border border-outline-dim p-5">
+            <div class="font-serif text-3xl font-bold text-gold">10+</div>
+            <div class="font-sans text-xs text-slate-500 mt-1 uppercase tracking-wider">Summer Interns</div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="relative bg-surface-high border border-outline-dim p-12 flex flex-col items-center justify-center aspect-square max-w-md mx-auto">
+          <div class="w-24 h-24 rounded-full bg-gold/10 border-2 border-gold/40 flex items-center justify-center mb-6">
+            <span class="font-serif text-3xl font-bold text-gold">WCU</span>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-white text-center mb-3">Witter Coin University</h3>
+          <p class="font-sans text-sm text-slate-500 text-center leading-relaxed">Empowering the next generation of numismatists since 2021</p>
+          <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold/60"></div>
+          <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-gold/60"></div>
+          <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-gold/60"></div>
+          <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-gold/60"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 bg-[#0F172A] border-y border-outline-dim">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16 text-center">
+    <h2 class="font-serif text-4xl font-bold text-white mb-4">Ready to Visit?</h2>
+    <p class="font-sans text-slate-400 mb-8 max-w-lg mx-auto">Come meet Seth and the team at 2299 Lombard Street. Walk-ins always welcome. Free appraisals, no pressure.</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="visit.html" class="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-slate-900 font-sans font-bold text-sm uppercase tracking-widest px-8 py-4 transition-colors">Visit Our Showroom</a>
+      <a href="sell-to-us.html" class="inline-flex items-center gap-2 border border-outline-dim hover:border-gold text-slate-300 hover:text-gold font-sans font-semibold text-sm uppercase tracking-widest px-8 py-4 transition-colors">Get a Free Appraisal</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#020617] border-t border-slate-800 py-10 px-6 lg:px-16">
+  <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-2">
+      <div class="w-6 h-6 rounded-full bg-gold flex items-center justify-center"><span class="text-slate-900 font-serif font-bold text-xs">W</span></div>
+      <span class="font-serif font-bold text-gold">Witter Coin</span>
+    </div>
+    <div class="flex flex-wrap justify-center gap-6">
+      <a href="shop.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Shop</a>
+      <a href="sell-to-us.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Sell to Us</a>
+      <a href="about.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">About</a>
+      <a href="visit.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Visit</a>
+      <a href="tel:4157815690" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">(415) 781-5690</a>
+    </div>
+    <p class="font-sans text-xs text-slate-600">© 2024 Witter Coin. Member of PNG and ANA.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
+  fadeEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

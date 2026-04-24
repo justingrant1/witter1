@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Witter Coin — America's Coin Shop Since 1960 | San Francisco</title>
+<meta name="description" content="San Francisco's premier rare coin dealer since 1960. Buy and sell rare coins, gold, silver, bullion, watches, and paper money. Free appraisals. Visit us at 2299 Lombard St."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          gold: "#D4AF37",
+          "gold-light": "#e9c176",
+          "gold-dark": "#b8962e",
+          "gold-muted": "#a07c20",
+          "surface": "#101415",
+          "surface-high": "#272a2c",
+          "surface-mid": "#1d2022",
+          "surface-low": "#191c1e",
+          "surface-nav": "#0F172A",
+          "outline-dim": "#45464d",
+          "outline-mid": "#909097",
+          "text-primary": "#e0e3e5",
+          "text-secondary-color": "#c6c6cd",
+        },
+        fontFamily: {
+          serif: ["Noto Serif", "Georgia", "serif"],
+          sans: ["Manrope", "system-ui", "sans-serif"],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  html { scroll-behavior: smooth; }
+  body { background-color: #101415; color: #e0e3e5; font-family: 'Manrope', sans-serif; }
+
+  /* Gold shimmer animation */
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  .gold-shimmer {
+    background: linear-gradient(90deg, #D4AF37 0%, #f5e07a 40%, #D4AF37 60%, #b8962e 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 4s linear infinite;
+  }
+
+  /* Fade-in on scroll */
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* Category card hover */
+  .cat-card { position: relative; overflow: hidden; }
+  .cat-card img { transition: transform 0.7s ease; }
+  .cat-card:hover img { transform: scale(1.08); }
+  .cat-card .overlay { transition: opacity 0.4s ease; }
+  .cat-card:hover .overlay { opacity: 1 !important; }
+
+  /* Coin card */
+  .coin-card:hover .coin-img { transform: scale(1.08); }
+  .coin-img { transition: transform 0.6s ease; }
+
+  /* Divider */
+  .gold-divider { width: 60px; height: 2px; background: #D4AF37; }
+
+  /* Announcement bar */
+  .announcement-bar { background: #D4AF37; }
+
+  /* Nav dropdown */
+  .nav-dropdown { display: none; }
+  .nav-item:hover .nav-dropdown { display: block; }
+
+  /* Process step */
+  .process-step { counter-increment: step; }
+
+  /* Parallax-ish hero overlay */
+  .hero-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(10,12,14,0.92) 0%,
+      rgba(10,12,14,0.75) 50%,
+      rgba(10,12,14,0.55) 100%
+    );
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #101415; }
+  ::-webkit-scrollbar-thumb { background: #45464d; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     ANNOUNCEMENT BAR
+═══════════════════════════════════════════════ -->
+<div class="announcement-bar text-center py-2 px-4">
+  <p class="text-slate-900 text-xs font-sans font-semibold tracking-wide">
+    <span class="material-symbols-outlined text-sm align-middle mr-1" style="font-size:14px">location_on</span>
+    Open to the Public · 2299 Lombard St, San Francisco ·
+    <span class="mx-2">Mon–Fri 10AM–5:30PM · Sat 10AM–2PM</span>
+    <span class="hidden sm:inline">·</span>
+    <a href="tel:4157815690" class="hidden sm:inline underline hover:no-underline ml-1">(415) 781-5690</a>
+  </p>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     STICKY NAV
+═══════════════════════════════════════════════ -->
+<header id="main-nav" class="bg-[#0F172A] sticky top-0 z-50 border-b border-slate-800 shadow-2xl">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-10 flex items-center justify-between h-16">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-3 shrink-0">
+      <div class="w-8 h-8 rounded-full bg-gold flex items-center justify-center">
+        <span class="text-slate-900 font-serif font-bold text-sm">W</span>
+      </div>
+      <span class="font-serif font-bold text-xl text-gold tracking-tight">Witter Coin</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:flex items-center gap-1">
+      <!-- Shop Megamenu -->
+      <div class="nav-item relative">
+        <a href="shop.html" class="flex items-center gap-1 font-sans text-sm text-slate-300 hover:text-white px-3 py-2 rounded hover:bg-slate-800 transition-colors">
+          Shop
+          <span class="material-symbols-outlined text-slate-500" style="font-size:16px">expand_more</span>
+        </a>
+        <div class="nav-dropdown absolute top-full left-0 mt-1 w-64 bg-slate-900 border border-slate-700 shadow-2xl rounded-sm z-50 py-2">
+          <a href="shop.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800 transition-colors">
+            <span class="material-symbols-outlined text-gold-muted" style="font-size:18px">stars</span>
+            Rare Coins
+          </a>
+          <a href="shop.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800 transition-colors">
+            <span class="material-symbols-outlined text-gold-muted" style="font-size:18px">circle</span>
+            Gold Coins
+          </a>
+          <a href="shop.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800 transition-colors">
+            <span class="material-symbols-outlined text-gold-muted" style="font-size:18px">circle</span>
+            Silver Coins
+          </a>
+          <a href="shop.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800 transition-colors">
+            <span class="material-symbols-outlined text-gold-muted" style="font-size:18px">bar_chart</span>
+            Bullion
+          </a>
+          <a href="shop.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800 transition-colors">
+            <span class="material-symbols-outlined text-gold-muted" style="font-size:18px">receipt_long</span>
+            Paper Money
+          </a>
+          <a href="shop.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:text-gold hover:bg-slate-800 transition-colors">
+            <span class="material-symbols-outlined text-gold-muted" style="font-size:18px">watch</span>
+            Watches & Jewelry
+          </a>
+        </div>
+      </div>
+      <a href="sell-to-us.html" class="font-sans text-sm text-slate-300 hover:text-white px-3 py-2 rounded hover:bg-slate-800 transition-colors">Sell to Us</a>
+      <a href="shop.html" class="font-sans text-sm text-slate-300 hover:text-white px-3 py-2 rounded hover:bg-slate-800 transition-colors">Auctions</a>
+      <a href="about.html" class="font-sans text-sm text-slate-300 hover:text-white px-3 py-2 rounded hover:bg-slate-800 transition-colors">About</a>
+      <a href="visit.html" class="font-sans text-sm text-slate-300 hover:text-white px-3 py-2 rounded hover:bg-slate-800 transition-colors">Visit</a>
+    </nav>
+
+    <!-- Right Actions -->
+    <div class="flex items-center gap-2">
+      <a href="sell-to-us.html" class="hidden md:flex items-center gap-1.5 bg-gold hover:bg-gold-dark text-slate-900 font-sans font-bold text-xs uppercase tracking-widest px-4 py-2 transition-colors duration-200">
+        Free Appraisal
+      </a>
+      <button class="material-symbols-outlined text-slate-400 hover:text-gold p-2 transition-colors" style="font-size:22px">search</button>
+      <button class="material-symbols-outlined text-slate-400 hover:text-gold p-2 transition-colors" style="font-size:22px">shopping_cart</button>
+      <button class="material-symbols-outlined text-slate-400 hover:text-gold p-2 transition-colors" style="font-size:22px">person</button>
+      <!-- Mobile menu -->
+      <button id="mobile-menu-btn" class="lg:hidden material-symbols-outlined text-slate-400 hover:text-gold p-2 transition-colors" style="font-size:22px">menu</button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-t border-slate-800 px-6 py-4 space-y-1">
+    <a href="shop.html" class="block font-sans text-sm text-slate-300 hover:text-gold py-2 border-b border-slate-800">Shop All</a>
+    <a href="sell-to-us.html" class="block font-sans text-sm text-slate-300 hover:text-gold py-2 border-b border-slate-800">Sell to Us</a>
+    <a href="shop.html" class="block font-sans text-sm text-slate-300 hover:text-gold py-2 border-b border-slate-800">Auctions</a>
+    <a href="about.html" class="block font-sans text-sm text-slate-300 hover:text-gold py-2 border-b border-slate-800">About</a>
+    <a href="visit.html" class="block font-sans text-sm text-slate-300 hover:text-gold py-2">Visit Us</a>
+    <div class="pt-3">
+      <a href="sell-to-us.html" class="block text-center bg-gold text-slate-900 font-bold text-xs uppercase tracking-widest py-3">Free Appraisal</a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════
+     HERO — SCREEN 1
+═══════════════════════════════════════════════ -->
+<section class="relative min-h-screen flex items-center overflow-hidden">
+  <!-- Background image -->
+  <div class="absolute inset-0">
+    <img
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl87Ox7jC0Y0guejfUD84Xs6WmxZPVwlAKKZgKzlwUSllanUBDTSVGmYWZHHse-4cDqltCkuO4JGNDx9vpmp9rrJOIeSNVXSw-QG8bqaiIY6EE4Ct43u-O5wyE2e1f558IwwxzuRP9EODptIlu32s90ZFB_D_PdLdrrC2eDs0UFLN_G9BHEw2lFEPbGqLbHeBbD8WUWMJMcDYHrE6xZNDQPjhqXXac6vo5wUbPwq3kpFKnhyBsWrCOkE94BgX9Gp7VHPvTks5jVQ"
+      alt="Rare Morgan Silver Dollar"
+      class="w-full h-full object-cover object-center scale-105"
+      style="filter: brightness(0.35) saturate(0.8);"
+    />
+  </div>
+  <!-- Gradient overlay -->
+  <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(10,12,14,0.97) 0%, rgba(10,12,14,0.80) 55%, rgba(10,12,14,0.40) 100%);"></div>
+  <!-- Subtle gold vignette bottom -->
+  <div class="absolute bottom-0 left-0 right-0 h-32" style="background: linear-gradient(to top, rgba(16,20,21,1), transparent);"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-16 py-24 w-full">
+    <div class="max-w-3xl">
+      <!-- Eyebrow -->
+      <div class="flex items-center gap-3 mb-6">
+        <div class="gold-divider"></div>
+        <span class="font-sans text-xs text-gold uppercase tracking-[0.2em] font-semibold">San Francisco · Est. 1960</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6 text-white">
+        America's<br/>
+        <span class="gold-shimmer">Coin Shop.</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="font-sans text-lg md:text-xl text-slate-300 leading-relaxed mb-10 max-w-xl">
+        Museum-grade rarities, bullion, and 65 years of numismatic expertise — trusted by collectors and investors worldwide.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-wrap gap-4 mb-12">
+        <a href="shop.html" class="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-slate-900 font-sans font-bold text-sm uppercase tracking-widest px-8 py-4 transition-all duration-200 shadow-lg shadow-gold/20">
+          Shop Rare Coins
+          <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span>
+        </a>
+        <a href="sell-to-us.html" class="inline-flex items-center gap-2 border border-gold/60 hover:border-gold text-gold hover:bg-gold/10 font-sans font-bold text-sm uppercase tracking-widest px-8 py-4 transition-all duration-200">
+          Free Appraisal
+          <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Trust strip -->
+      <div class="flex flex-wrap items-center gap-6">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-gold" style="font-size:16px">verified</span>
+          <span class="font-sans text-xs text-slate-400 uppercase tracking-wider">PCGS Authorized</span>
+        </div>
+        <div class="w-px h-4 bg-slate-700"></div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-gold" style="font-size:16px">verified</span>
+          <span class="font-sans text-xs text-slate-400 uppercase tracking-wider">NGC Dealer</span>
+        </div>
+        <div class="w-px h-4 bg-slate-700"></div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-gold" style="font-size:16px">verified</span>
+          <span class="font-sans text-xs text-slate-400 uppercase tracking-wider">CAC Co-Founder</span>
+        </div>
+        <div class="w-px h-4 bg-slate-700"></div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-gold" style="font-size:16px">verified</span>
+          <span class="font-sans text-xs text-slate-400 uppercase tracking-wider">ANA Board Member</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+    <span class="font-sans text-xs text-slate-500 uppercase tracking-widest">Scroll</span>
+    <div class="w-px h-8 bg-gradient-to-b from-slate-500 to-transparent"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     STATS BAR
+═══════════════════════════════════════════════ -->
+<section class="bg-[#0F172A] border-y border-slate-800">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16 py-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-slate-800">
+      <div class="text-center px-4">
+        <div class="font-serif text-3xl font-bold text-gold mb-1">65+</div>
+        <div class="font-sans text-xs text-slate-400 uppercase tracking-widest">Years in Business</div>
+      </div>
+      <div class="text-center px-4">
+        <div class="font-serif text-3xl font-bold text-gold mb-1">28</div>
+        <div class="font-sans text-xs text-slate-400 uppercase tracking-widest">Expert Staff</div>
+      </div>
+      <div class="text-center px-4">
+        <div class="font-serif text-3xl font-bold text-gold mb-1">$1M+</div>
+        <div class="font-sans text-xs text-slate-400 uppercase tracking-widest">Collections Purchased</div>
+      </div>
+      <div class="text-center px-4">
+        <div class="font-serif text-3xl font-bold text-gold mb-1">Free</div>
+        <div class="font-sans text-xs text-slate-400 uppercase tracking-widest">Appraisals Always</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FEATURED INVENTORY — SCREEN 2
+═══════════════════════════════════════════════ -->
+<section class="py-20 lg:py-28 bg-surface" id="featured">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16">
+
+    <!-- Section header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 fade-in">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <div class="gold-divider"></div>
+          <span class="font-sans text-xs text-gold uppercase tracking-[0.2em] font-semibold">Just Arrived</span>
+        </div>
+        <h2 class="font-serif text-4xl lg:text-5xl font-bold text-white">Featured Rarities</h2>
+        <p class="font-sans text-slate-400 mt-2 max-w-lg">Hand-selected by Seth Chandler and our team of professional numismatists.</p>
+      </div>
+      <a href="shop.html" class="inline-flex items-center gap-2 text-gold hover:text-gold-light font-sans font-semibold text-sm uppercase tracking-widest border-b border-gold/40 hover:border-gold pb-1 transition-colors shrink-0">
+        View All Inventory
+        <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span>
+      </a>
+    </div>
+
+    <!-- Coin grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+
+      <!-- Card 1 -->
+      <div class="coin-card group flex flex-col bg-surface-high border border-outline-dim hover:border-gold/40 transition-all duration-300 cursor-pointer">
+        <div class="relative overflow-hidden aspect-square bg-[#1a1d1f] flex items-center justify-center p-8">
+          <div class="absolute inset-0 bg-gradient-to-tr from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl87Ox7jC0Y0guejfUD84Xs6WmxZPVwlAKKZgKzlwUSllanUBDTSVGmYWZHHse-4cDqltCkuO4JGNDx9vpmp9rrJOIeSNVXSw-QG8bqaiIY6EE4Ct43u-O5wyE2e1f558IwwxzuRP9EODptIlu32s90ZFB_D_PdLdrrC2eDs0UFLN_G9BHEw2lFEPbGqLbHeBbD8WUWMJMcDYHrE6xZNDQPjhqXXac6vo5wUbPwq3kpFKnhyBsWrCOkE94BgX9Gp7VHPvTks5jVQ"
+            alt="1881-S Morgan Silver Dollar"
+            class="coin-img w-3/4 h-auto object-contain drop-shadow-[0_15px_40px_rgba(0,0,0,0.9)]"/>
+          <div class="absolute top-3 left-3">
+            <span class="bg-slate-900/90 backdrop-blur-sm px-2.5 py-1 text-[10px] font-bold text-gold-light border border-gold/25 tracking-widest uppercase">PCGS MS-67</span>
+          </div>
+          <button class="absolute top-3 right-3 material-symbols-outlined text-slate-600 hover:text-gold transition-colors opacity-0 group-hover:opacity-100" style="font-size:20px">favorite</button>
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <h3 class="font-serif text-base font-semibold text-white group-hover:text-gold transition-colors mb-1">1881-S Morgan Silver Dollar</h3>
+          <p class="font-sans text-xs text-slate-500 uppercase tracking-wider mb-4">Mint: San Francisco</p>
+          <div class="mt-auto flex items-center justify-between pt-4 border-t border-outline-dim/50">
+            <span class="font-serif text-xl font-bold text-gold">$14,500</span>
+            <button class="bg-gold hover:bg-gold-dark text-slate-900 font-sans font-bold text-xs uppercase tracking-wider px-4 py-2 transition-colors">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="coin-card group flex flex-col bg-surface-high border border-outline-dim hover:border-gold/40 transition-all duration-300 cursor-pointer">
+        <div class="relative overflow-hidden aspect-square bg-[#1a1d1f] flex items-center justify-center p-8">
+          <div class="absolute inset-0 bg-gradient-to-tr from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjF0xG5Bvm4fjydV70kUN6_WRn1q6mhvHl2wjoSFFrDb9rDqAhJNSt1OIO9ihflDfcqdYvt1KADYjQF_UX9dNUlhkgISm6OeoA3QX46ck7VhBX-RUM8E7Bj1wnYfFrQkJNSr-EsGFTNoAmlrP9Foew8mK9iHkKtM-lJMhaHemgtzNp8SFARkBP4PFRjr96oIwWs0pG39dua54tgorcV0gpB3bzZwxaBrzFRCVQ6zFa8ru4zqu4aij7cZ-YoJBqWLiKmZJTYKnFAQ"
+            alt="1907 Saint-Gaudens Double Eagle"
+            class="coin-img w-3/4 h-auto object-contain drop-shadow-[0_15px_40px_rgba(0,0,0,0.9)]"/>
+          <div class="absolute top-3 left-3">
+            <span class="bg-slate-900/90 backdrop-blur-sm px-2.5 py-1 text-[10px] font-bold text-gold-light border border-gold/25 tracking-widest uppercase">NGC PF-69</span>
+          </div>
+          <div class="absolute top-3 right-3">
+            <span class="bg-red-900/80 backdrop-blur-sm px-2 py-0.5 text-[9px] font-bold text-red-300 uppercase tracking-wider">Featured</span>
+          </div>
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <h3 class="font-serif text-base font-semibold text-white group-hover:text-gold transition-colors mb-1">1907 Saint-Gaudens Double Eagle</h3>
+          <p class="font-sans text-xs text-slate-500 uppercase tracking-wider mb-4">High Relief · Philadelphia</p>
+          <div class="mt-auto flex items-center justify-between pt-4 border-t border-outline-dim/50">
+            <span class="font-serif text-xl font-bold text-gold">$82,000</span>
+            <button class="bg-gold hover:bg-gold-dark text-slate-900 font-sans font-bold text-xs uppercase tracking-wider px-4 py-2 transition-colors">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="coin-card group flex flex-col bg-surface-high border border-outline-dim hover:border-gold/40 transition-all duration-300 cursor-pointer">
+        <div class="relative overflow-hidden aspect-square bg-[#1a1d1f] flex items-center justify-center p-8">
+          <div class="absolute inset-0 bg-gradient-to-tr from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgl6sAH_R1xPUAgcvR_sVXzPaZ4RRGhJsdre8SCd6no2XoYgBbd5m8vNMhmr4rf04rczNGPal6Q9uSQMEIqmU1axqn4-w4xL-tyNEzX3EI9kpDRPFhCFHOSCyliYQ7gap4Pc8JKOIAvZx8NHnYxeJYfz-L18aXj14F7WzEGf382a22qmrhk3g7gzbY7nchUJQ0leJAJ-becJ1zOyVAduW2c9f4pKga2CxRusNHe8p6i0DhBR2YcUMcWj1UsR-glT9tphEK3WJ3ww"
+            alt="1795 Flowing Hair Half Dollar"
+            class="coin-img w-3/4 h-auto object-contain drop-shadow-[0_15px_40px_rgba(0,0,0,0.9)]"/>
+          <div class="absolute top-3 left-3">
+            <span class="bg-slate-900/90 backdrop-blur-sm px-2.5 py-1 text-[10px] font-bold text-gold-light border border-gold/25 tracking-widest uppercase">PCGS MS-65</span>
+          </div>
+          <button class="absolute top-3 right-3 material-symbols-outlined text-slate-600 hover:text-gold transition-colors opacity-0 group-hover:opacity-100" style="font-size:20px">favorite</button>
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <h3 class="font-serif text-base font-semibold text-white group-hover:text-gold transition-colors mb-1">1795 Flowing Hair Half Dollar</h3>
+          <p class="font-sans text-xs text-slate-500 uppercase tracking-wider mb-4">Rare Die State · Early US Mint</p>
+          <div class="mt-auto flex items-center justify-between pt-4 border-t border-outline-dim/50">
+            <span class="font-serif text-xl font-bold text-gold">$24,950</span>
+            <button class="bg-gold hover:bg-gold-dark text-slate-900 font-sans font-bold text-xs uppercase tracking-wider px-4 py-2 transition-colors">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="coin-card group flex flex-col bg-surface-high border border-outline-dim hover:border-gold/40 transition-all duration-300 cursor-pointer">
+        <div class="relative overflow-hidden aspect-square bg-[#1a1d1f] flex items-center justify-center p-8">
+          <div class="absolute inset-0 bg-gradient-to-tr from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo0lZqxhdgW1uPGZLmFx_9ZyIORrk_Oze2eo_GbwbrjQ9d3Em7V19UkUu1OK6QGJFwhGx5cKzcOJS_lXAxOsWlbks9jwHdvdox2s8bDW3-JT6mmIataMqmgcAPBy21enqbPpeMwY-AYBWdIxKhHoyuX_X_J_NSDviyVv2nZH0BWI48LXRiwPOQEUKFTfCeZHZPrBeyjREivw5KMr_3Kzdj45zixGfo5XxiOtKIk6xZAaiLsCARrWqW8b_WjR7IkiwYp8IAmWqtNA"
+            alt="2021-W American Silver Eagle"
+            class="coin-img w-3/4 h-auto object-contain drop-shadow-[0_15px_40px_rgba(0,0,0,0.9)]"/>
+          <div class="absolute top-3 left-3">
+            <span class="bg-slate-900/90 backdrop-blur-sm px-2.5 py-1 text-[10px] font-bold text-gold-light border border-gold/25 tracking-widest uppercase">NGC PF-70</span>
+          </div>
+          <button class="absolute top-3 right-3 material-symbols-outlined text-slate-600 hover:text-gold transition-colors opacity-0 group-hover:opacity-100" style="font-size:20px">favorite</button>
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <h3 class="font-serif text-base font-semibold text-white group-hover:text-gold transition-colors mb-1">2021-W American Silver Eagle</h3>
+          <p class="font-sans text-xs text-slate-500 uppercase tracking-wider mb-4">Reverse Proof · 75th Anniversary</p>
+          <div class="mt-auto flex items-center justify-between pt-4 border-t border-outline-dim/50">
+            <span class="font-serif text-xl font-bold text-gold">$1,850</span>
+            <button class="bg-gold hover:bg-gold-dark text-slate-900 font-sans font-bold text-xs uppercase tracking-wider px-4 py-2 transition-colors">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- View all CTA -->
+    <div class="text-center mt-12 fade-in">
+      <a href="shop.html" class="inline-flex items-center gap-3 border border-outline-dim hover:border-gold text-slate-300 hover:text-gold font-sans font-semibold text-sm uppercase tracking-widest px-10 py-4 transition-all duration-200">
+        Browse Full Inventory
+        <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SHOP BY CATEGORY
+═══════════════════════════════════════════════ -->
+<section class="py-20 lg:py-28 bg-[#0c0f10]">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16">
+
+    <div class="text-center mb-12 fade-in">
+      <div class="flex items-center justify-center gap-3 mb-3">
+        <div class="gold-divider"></div>
+        <span class="font-sans text-xs text-gold uppercase tracking-[0.2em] font-semibold">Explore</span>
+        <div class="gold-divider"></div>
+      </div>
+      <h2 class="font-serif text-4xl lg:text-5xl font-bold text-white">Shop by Category</h2>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-4">
+
+      <!-- Rare Coins -->
+      <a href="shop.html" class="cat-card relative aspect-[4/3] overflow-hidden group">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjF0xG5Bvm4fjydV70kUN6_WRn1q6mhvHl2wjoSFFrDb9rDqAhJNSt1OIO9ihflDfcqdYvt1KADYjQF_UX9dNUlhkgISm6OeoA3QX46ck7VhBX-RUM8E7Bj1wnYfFrQkJNSr-EsGFTNoAmlrP9Foew8mK9iHkKtM-lJMhaHemgtzNp8SFARkBP4PFRjr96oIwWs0pG39dua54tgorcV0gpB3bzZwxaBrzFRCVQ6zFa8ru4zqu4aij7cZ-YoJBqWLiKmZJTYKnFAQ"
+          alt="Rare Coins" class="w-full h-full object-cover" style="filter: brightness(0.5) saturate(0.7);"/>
+        <div class="overlay absolute inset-0 opacity-0" style="background: linear-gradient(to top, rgba(212,175,55,0.3), transparent);"></div>
+        <div class="absolute inset-0 flex flex-col justify-end p-6">
+          <span class="font-sans text-xs text-gold uppercase tracking-widest mb-1">Numismatic</span>
+          <h3 class="font-serif text-2xl font-bold text-white">Rare Coins</h3>
+          <div class="flex items-center gap-1 mt-2 text-gold opacity-0 group-hover:opacity-100 transition-opacity">
+            <span class="font-sans text-xs font-semibold">Shop Now</span>
+            <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Gold -->
+      <a href="shop.html" class="cat-card relative aspect-[4/3] overflow-hidden group">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAya0rbbcqQwuNOlz4RBSkJqJq0Ui2slRtJgVBczWfcbtdlQDhJuwabHmN-_pMoxxh9HN1AD5ZnBqHSgzi2pqBmrID1dir2l3kBoAhYexTEfiOhGLLNSX1k2jG6QmH0i3cJGIYK0S-qoav1zIpxIt8MROcb8rDQNu1RUqkPjLbe65gXcsigKoH3TuS4_RXSAlqepaHu1aw1sFbiJ9wTC7QYoT4qk226XYMfjSco4zeVDh446JeMl4QyMjNLD8uYp1nFj1olM1qe0A"
+          alt="Gold Coins" class="w-full h-full object-cover" style="filter: brightness(0.45) saturate(0.8);"/>
+        <div class="overlay absolute inset-0 opacity-0" style="background: linear-gradient(to top, rgba(212,175,55,0.3), transparent);"></div>
+        <div class="absolute inset-0 flex flex-col justify-end p-6">
+          <span class="font-sans text-xs text-gold uppercase tracking-widest mb-1">Investment Grade</span>
+          <h3 class="font-serif text-2xl font-bold text-white">Gold Coins</h3>
+          <div class="flex items-center gap-1 mt-2 text-gold opacity-0 group-hover:opacity-100 transition-opacity">
+            <span class="font-sans text-xs font-semibold">Shop Now</span>
+            <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Silver -->
+      <a href="shop.html" class="cat-card relative aspect-[4/3] overflow-hidden group">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl87Ox7jC0Y0guejfUD84Xs6WmxZPVwlAKKZgKzlwUSllanUBDTSVGmYWZHHse-4cDqltCkuO4JGNDx9vpmp9rrJOIeSNVXSw-QG8bqaiIY6EE4Ct43u-O5wyE2e1f558IwwxzuRP9EODptIlu32s90ZFB_D_PdLdrrC2eDs0UFLN_G9BHEw2lFEPbGqLbHeBbD8WUWMJMcDYHrE6xZNDQPjhqXXac6vo5wUbPwq3kpFKnhyBsWrCOkE94BgX9Gp7VHPvTks5jVQ"
+          alt="Silver Coins" class="w-full h-full object-cover" style="filter: brightness(0.45) saturate(0.5);"/>
+        <div class="overlay absolute inset-0 opacity-0" style="background: linear-gradient(to top, rgba(212,175,55,0.3), transparent);"></div>
+        <div class="absolute inset-0 flex flex-col justify-end p-6">
+          <span class="font-sans text-xs text-gold uppercase tracking-widest mb-1">Classic & Modern</span>
+          <h3 class="font-serif text-2xl font-bold text-white">Silver Coins</h3>
+          <div class="flex items-center gap-1 mt-2 text-gold opacity-0 group-hover:opacity-100 transition-opacity">
+            <span class="font-sans text-xs font-semibold">Shop Now</span>
+            <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Bullion -->
+      <a href="shop.html" class="cat-card relative aspect-[4/3] overflow-hidden group">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlwYjOPz_iUV7O3AsT1haxmRpz0xYUxabDDXIhBe_4cqgxTUDlSlUw-HQ37R5LTRu3w4K1EFGU_9yYth9esj7GjmQkCd5-CBQYRer7YzkmwBykLAAZn-oYaZLPQwF-17CWoExuqpBvuQp5pnCBE_qLBIUvH4JRTqDAy2ngXAyTcMoxp_JNnxF4135F2qhDOJL4neq78hJRo3JDN0U_nHxqHnxbKTHWR6w3I0CrAkzfh0orw6Q5vWvDJIdptIJ4m-hP1lXn_PB4YA"
+          alt="Bullion" class="w-full h-full object-cover" style="filter: brightness(0.45) saturate(0.6);"/>
+        <div class="overlay absolute inset-0 opacity-0" style="background: linear-gradient(to top, rgba(212,175,55,0.3), transparent);"></div>
+        <div class="absolute inset-0 flex flex-col justify-end p-6">
+          <span class="font-sans text-xs text-gold uppercase tracking-widest mb-1">Gold · Silver · Platinum</span>
+          <h3 class="font-serif text-2xl font-bold text-white">Bullion</h3>
+          <div class="flex items-center gap-1 mt-2 text-gold opacity-0 group-hover:opacity-100 transition-opacity">
+            <span class="font-sans text-xs font-semibold">Shop Now</span>
+            <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Paper Money -->
+      <a href="shop.html" class="cat-card relative aspect-[4/3] overflow-hidden group">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgl6sAH_R1xPUAgcvR_sVXzPaZ4RRGhJsdre8SCd6no2XoYgBbd5m8vNMhmr4rf04rczNGPal6Q9uSQMEIqmU1axqn4-w4xL-tyNEzX3EI9kpDRPFhCFHOSCyliYQ7gap4Pc8JKOIAvZx8NHnYxeJYfz-L18aXj14F7WzEGf382a22qmrhk3g7gzbY7nchUJQ0leJAJ-becJ1zOyVAduW2c9f4pKga2CxRusNHe8p6i0DhBR2YcUMcWj1UsR-glT9tphEK3WJ3ww"
+          alt="Paper Money" class="w-full h-full object-cover" style="filter: brightness(0.45) saturate(0.5);"/>
+        <div class="overlay absolute inset-0 opacity-0" style="background: linear-gradient(to top, rgba(212,175,55,0.3), transparent);"></div>
+        <div class="absolute inset-0 flex flex-col justify-end p-6">
+          <span class="font-sans text-xs text-gold uppercase tracking-widest mb-1">Currency & Notes</span>
+          <h3 class="font-serif text-2xl font-bold text-white">Paper Money</h3>
+          <div class="flex items-center gap-1 mt-2 text-gold opacity-0 group-hover:opacity-100 transition-opacity">
+            <span class="font-sans text-xs font-semibold">Shop Now</span>
+            <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Watches & Jewelry -->
+      <a href="shop.html" class="cat-card relative aspect-[4/3] overflow-hidden group">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo0lZqxhdgW1uPGZLmFx_9ZyIORrk_Oze2eo_GbwbrjQ9d3Em7V19UkUu1OK6QGJFwhGx5cKzcOJS_lXAxOsWlbks9jwHdvdox2s8bDW3-JT6mmIataMqmgcAPBy21enqbPpeMwY-AYBWdIxKhHoyuX_X_J_NSDviyVv2nZH0BWI48LXRiwPOQEUKFTfCeZHZPrBeyjREivw5KMr_3Kzdj45zixGfo5XxiOtKIk6xZAaiLsCARrWqW8b_WjR7IkiwYp8IAmWqtNA"
+          alt="Watches & Jewelry" class="w-full h-full object-cover" style="filter: brightness(0.45) saturate(0.6);"/>
+        <div class="overlay absolute inset-0 opacity-0" style="background: linear-gradient(to top, rgba(212,175,55,0.3), transparent);"></div>
+        <div class="absolute inset-0 flex flex-col justify-end p-6">
+          <span class="font-sans text-xs text-gold uppercase tracking-widest mb-1">Rolex & Fine Jewelry</span>
+          <h3 class="font-serif text-2xl font-bold text-white">Watches & Jewelry</h3>
+          <div class="flex items-center gap-1 mt-2 text-gold opacity-0 group-hover:opacity-100 transition-opacity">
+            <span class="font-sans text-xs font-semibold">Shop Now</span>
+            <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SELL TO US — DUAL PATH
+═══════════════════════════════════════════════ -->
+<section class="py-20 lg:py-28 bg-surface">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16">
+    <div class="grid lg:grid-cols-2 gap-0 border border-outline-dim overflow-hidden">
+
+      <!-- Left: Sell pitch -->
+      <div class="bg-surface-mid p-10 lg:p-14 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="gold-divider"></div>
+            <span class="font-sans text-xs text-gold uppercase tracking-[0.2em] font-semibold">We Buy Everything</span>
+          </div>
+          <h2 class="font-serif text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            Sell Your<br/>Collection to Us
+          </h2>
+          <p class="font-sans text-slate-400 text-base leading-relaxed mb-8">
+            Since 1960, Witter Coin is the San Francisco Bay Area's #1 buyer of old coins, coin collections, all gold & silver, old gold jewelry, paper money, Rolex watches, and bullion. We buy collections ranging from a few dollars to well over <strong class="text-white">$1,000,000</strong>.
+          </p>
+
+          <!-- What we buy list -->
+          <div class="grid grid-cols-2 gap-3 mb-10">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-gold" style="font-size:16px">check_circle</span>
+              <span class="font-sans text-sm text-slate-300">Rare Coins</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-gold" style="font-size:16px">check_circle</span>
+              <span class="font-sans text-sm text-slate-300">Gold & Silver</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-gold" style="font-size:16px">check_circle</span>
+              <span class="font-sans text-sm text-slate-300">Coin Collections</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-gold" style="font-size:16px">check_circle</span>
+              <span class="font-sans text-sm text-slate-300">Paper Money</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-gold" style="font-size:16px">check_circle</span>
+              <span class="font-sans text-sm text-slate-300">Rolex Watches</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-gold" style="font-size:16px">check_circle</span>
+              <span class="font-sans text-sm text-slate-300">Gold Jewelry</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-gold" style="font-size:16px">check_circle</span>
+              <span class="font-sans text-sm text-slate-300">Bullion</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-gold" style="font-size:16px">check_circle</span>
+              <span class="font-sans text-sm text-slate-300">Entire Estates</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="sell-to-us.html" class="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-slate-900 font-sans font-bold text-sm uppercase tracking-widest px-8 py-4 transition-colors">
+            Get a Free Appraisal
+          </a>
+          <a href="tel:4157815690" class="inline-flex items-center gap-2 border border-outline-dim hover:border-gold text-slate-300 hover:text-gold font-sans font-semibold text-sm px-6 py-4 transition-colors">
+            <span class="material-symbols-outlined" style="font-size:18px">call</span>
+            (415) 781-5690
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Process steps -->
+      <div class="bg-[#0F172A] p-10 lg:p-14 border-l border-outline-dim">
+        <h3 class="font-serif text-2xl font-bold text-white mb-8">How It Works</h3>
+
+        <div class="space-y-8">
+          <div class="flex gap-5">
+            <div class="shrink-0 w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center">
+              <span class="font-serif text-gold font-bold">1</span>
+            </div>
+            <div>
+              <h4 class="font-serif text-lg font-semibold text-white mb-1">Visit Our Showroom</h4>
+              <p class="font-sans text-sm text-slate-400 leading-relaxed">Bring your items to 2299 Lombard St. No appointment needed for most collections. Walk-ins always welcome.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-5">
+            <div class="shrink-0 w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center">
+              <span class="font-serif text-gold font-bold">2</span>
+            </div>
+            <div>
+              <h4 class="font-serif text-lg font-semibold text-white mb-1">Free Expert Appraisal</h4>
+              <p class="font-sans text-sm text-slate-400 leading-relaxed">Our professional numismatists will examine, authenticate, and appraise your items at no charge. "Just want to know what it's worth?" — always welcome.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-5">
+            <div class="shrink-0 w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center">
+              <span class="font-serif text-gold font-bold">3</span>
+            </div>
+            <div>
+              <h4 class="font-serif text-lg font-semibold text-white mb-1">Get Paid on the Spot</h4>
+              <p class="font-sans text-sm text-slate-400 leading-relaxed">We make a fair offer. You decide — no pressure, ever. If you choose to sell, we pay immediately. It's that simple.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 p-5 bg-surface-high border border-outline-dim">
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-gold shrink-0 mt-0.5" style="font-size:20px">info</span>
+            <p class="font-sans text-sm text-slate-400">
+              <strong class="text-slate-300">Large collections?</strong> We recommend scheduling an appointment. Call or email anytime — <a href="tel:4157815690" class="text-gold hover:underline">(415) 781-5690</a> · <a href="mailto:sales@wittercoin.com" class="text-gold hover:underline">sales@wittercoin.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SETH CHANDLER / AUTHORITY SECTION
+═══════════════════════════════════════════════ -->
+<section class="py-20 lg:py-28 bg-[#0c0f10] overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: Image + credential badges -->
+      <div class="relative fade-in">
+        <!-- Main image placeholder with editorial treatment -->
+        <div class="relative aspect-[3/4] max-w-sm mx-auto lg:mx-0 bg-surface-high border border-outline-dim overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center p-8">
+              <div class="w-24 h-24 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center mx-auto mb-4">
+                <span class="font-serif text-4xl font-bold text-gold">SC</span>
+              </div>
+              <p class="font-sans text-xs text-slate-500 uppercase tracking-widest">Seth Chandler</p>
+              <p class="font-sans text-xs text-slate-600 mt-1">Chief Numismatist</p>
+            </div>
+          </div>
+          <!-- Decorative gold corner accents -->
+          <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold/60"></div>
+          <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-gold/60"></div>
+          <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-gold/60"></div>
+          <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-gold/60"></div>
+        </div>
+
+        <!-- Floating credential badges -->
+        <div class="absolute -right-4 top-8 bg-[#0F172A] border border-gold/30 px-4 py-3 shadow-xl hidden lg:block">
+          <p class="font-sans text-xs text-gold font-bold uppercase tracking-wider">Coin World</p>
+          <p class="font-sans text-xs text-slate-400 mt-0.5">Top 100 Numismatists</p>
+          <p class="font-sans text-xs text-slate-500">of All Time</p>
+        </div>
+        <div class="absolute -right-4 bottom-16 bg-[#0F172A] border border-gold/30 px-4 py-3 shadow-xl hidden lg:block">
+          <p class="font-sans text-xs text-gold font-bold uppercase tracking-wider">CAC Grading</p>
+          <p class="font-sans text-xs text-slate-400 mt-0.5">Co-Founder &</p>
+          <p class="font-sans text-xs text-slate-500">Guest Grader</p>
+        </div>
+      </div>
+
+      <!-- Right: Bio content -->
+      <div class="fade-in">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="gold-divider"></div>
+          <span class="font-sans text-xs text-gold uppercase tracking-[0.2em] font-semibold">Our Story</span>
+        </div>
+
+        <h2 class="font-serif text-4xl lg:text-5xl font-bold text-white mb-2 leading-tight">
+          Meet Seth Chandler
+        </h2>
+        <p class="font-serif text-xl text-gold-light italic mb-8">Chief Numismatist & Owner</p>
+
+        <p class="font-sans text-slate-400 leading-relaxed mb-6">
+          Witter Coin was founded in 1960 by legendary numismatist Dean Witter, who opened a small store in San Francisco's Financial District. Today, Seth Chandler leads one of the most dynamic coin shops in America — with 28 employees and a mission to serve collectors at every level.
+        </p>
+
+        <p class="font-sans text-slate-400 leading-relaxed mb-8">
+          Seth has been recognized multiple times by <em>Coin World</em> as one of the <strong class="text-white">Top 100 Numismatists of All Time</strong> and named one of the "Greatest Coin Graders of All Time" by <em>COINage</em> magazine. He is a contributor to the iconic <em>Red Book</em> and serves on the Board of Governors for the ANA.
+        </p>
+
+        <!-- Credential grid -->
+        <div class="grid grid-cols-2 gap-4 mb-10">
+          <div class="bg-surface-high border border-outline-dim p-4">
+            <span class="material-symbols-outlined text-gold mb-2 block" style="font-size:20px">military_tech</span>
+            <p class="font-sans text-xs font-bold text-white uppercase tracking-wider">ANA Board</p>
+            <p class="font-sans text-xs text-slate-500 mt-0.5">Board of Governors</p>
+          </div>
+          <div class="bg-surface-high border border-outline-dim p-4">
+            <span class="material-symbols-outlined text-gold mb-2 block" style="font-size:20px">school</span>
+            <p class="font-sans text-xs font-bold text-white uppercase tracking-wider">WCU Founder</p>
+            <p class="font-sans text-xs text-slate-500 mt-0.5">Witter Coin University</p>
+          </div>
+          <div class="bg-surface-high border border-outline-dim p-4">
+            <span class="material-symbols-outlined text-gold mb-2 block" style="font-size:20px">verified_user</span>
+            <p class="font-sans text-xs font-bold text-white uppercase tracking-wider">CAC Co-Founder</p>
+            <p class="font-sans text-xs text-slate-500 mt-0.5">World's Finest Grading</p>
+          </div>
+          <div class="bg-surface-high border border-outline-dim p-4">
+            <span class="material-symbols-outlined text-gold mb-2 block" style="font-size:20px">menu_book</span>
+            <p class="font-sans text-xs font-bold text-white uppercase tracking-wider">Red Book</p>
+            <p class="font-sans text-xs text-slate-500 mt-0.5">Contributing Author</p>
+          </div>
+        </div>
+
+        <a href="about.html" class="inline-flex items-center gap-2 text-gold hover:text-gold-light font-sans font-semibold text-sm uppercase tracking-widest border-b border-gold/40 hover:border-gold pb-1 transition-colors">
+          Read Our Full Story
+          <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     WITTER COIN UNIVERSITY CALLOUT
+═══════════════════════════════════════════════ -->
+<section class="py-16 bg-surface border-y border-outline-dim">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16">
+    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+      <div class="shrink-0 w-20 h-20 rounded-full bg-gold/10 border-2 border-gold/40 flex items-center justify-center">
+        <span class="font-serif text-2xl font-bold text-gold">WCU</span>
+      </div>
+      <div class="flex-1 text-center md:text-left">
+        <h3 class="font-serif text-2xl font-bold text-white mb-2">Witter Coin University</h3>
+        <p class="font-sans text-slate-400 text-sm leading-relaxed max-w-2xl">
+          A nonprofit bringing Young Numismatists (ages 14–20) to San Francisco for an all-expense-paid week of hands-on learning. Every year we raise over <strong class="text-white">$200,000</strong> to provide 40 scholarships. Seth's dedication to the next generation of collectors.
+        </p>
+      </div>
+      <div class="shrink-0">
+        <a href="about.html" class="inline-flex items-center gap-2 border border-gold/50 hover:border-gold text-gold font-sans font-semibold text-xs uppercase tracking-widest px-6 py-3 transition-colors">
+          Learn More
+          <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     VISIT OUR SHOWROOM
+═══════════════════════════════════════════════ -->
+<section class="py-20 lg:py-28 bg-[#0c0f10]" id="visit">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16">
+
+    <div class="text-center mb-12 fade-in">
+      <div class="flex items-center justify-center gap-3 mb-3">
+        <div class="gold-divider"></div>
+        <span class="font-sans text-xs text-gold uppercase tracking-[0.2em] font-semibold">Open to the Public</span>
+        <div class="gold-divider"></div>
+      </div>
+      <h2 class="font-serif text-4xl lg:text-5xl font-bold text-white">Visit Our Showroom</h2>
+      <p class="font-sans text-slate-400 mt-3 max-w-xl mx-auto">San Francisco's Marina/Cow Hollow District. Safe, secure, and welcoming — six days a week.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6">
+
+      <!-- Map / Address card -->
+      <div class="lg:col-span-2 bg-surface-high border border-outline-dim overflow-hidden">
+        <!-- Map embed -->
+        <div class="aspect-video w-full">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0!2d-122.4394!3d37.7993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580e3b0b0b0b0%3A0x0!2s2299+Lombard+St%2C+San+Francisco%2C+CA+94123!5e0!3m2!1sen!2sus!4v1"
+            width="100%"
+            height="100%"
+            style="border:0; filter: invert(90%) hue-rotate(180deg) saturate(0.5);"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Witter Coin Location Map">
+          </iframe>
+        </div>
+        <div class="p-6 flex flex-wrap gap-6 items-center justify-between">
+          <div>
+            <p class="font-serif text-lg font-semibold text-white">2299 Lombard Street</p>
+            <p class="font-sans text-sm text-slate-400">San Francisco, CA 94123 · at Pierce St</p>
+          </div>
+          <a href="https://maps.google.com/?q=2299+Lombard+St+San+Francisco+CA" target="_blank" class="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-slate-900 font-sans font-bold text-xs uppercase tracking-widest px-5 py-2.5 transition-colors">
+            <span class="material-symbols-outlined" style="font-size:16px">directions</span>
+            Get Directions
+          </a>
+        </div>
+      </div>
+
+      <!-- Info cards -->
+      <div class="flex flex-col gap-4">
+
+        <!-- Hours -->
+        <div class="bg-surface-high border border-outline-dim p-6 flex-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined text-gold" style="font-size:20px">schedule</span>
+            <h4 class="font-serif text-base font-semibold text-white">Store Hours</h4>
+          </div>
+          <div class="space-y-2">
+            <div class="flex justify-between items-center">
+              <span class="font-sans text-sm text-slate-400">Monday – Friday</span>
+              <span class="font-sans text-sm font-semibold text-white">10AM – 5:30PM</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="font-sans text-sm text-slate-400">Saturday</span>
+              <span class="font-sans text-sm font-semibold text-white">10AM – 2PM</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="font-sans text-sm text-slate-400">Sunday</span>
+              <span class="font-sans text-sm text-slate-600">Closed</span>
+            </div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-outline-dim flex items-center gap-2">
+            <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+            <span class="font-sans text-xs text-green-400">Open Today</span>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="bg-surface-high border border-outline-dim p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined text-gold" style="font-size:20px">contact_phone</span>
+            <h4 class="font-serif text-base font-semibold text-white">Contact</h4>
+          </div>
+          <div class="space-y-3">
+            <a href="tel:4157815690" class="flex items-center gap-3 text-slate-300 hover:text-gold transition-colors">
+              <span class="material-symbols-outlined text-slate-600" style="font-size:16px">call</span>
+              <span class="font-sans text-sm">(415) 781-5690</span>
+            </a>
+            <a href="mailto:sales@wittercoin.com" class="flex items-center gap-3 text-slate-300 hover:text-gold transition-colors">
+              <span class="material-symbols-outlined text-slate-600" style="font-size:16px">mail</span>
+              <span class="font-sans text-sm">sales@wittercoin.com</span>
+            </a>
+            <div class="flex items-center gap-3 text-slate-400">
+              <span class="material-symbols-outlined text-slate-600" style="font-size:16px">local_parking</span>
+              <span class="font-sans text-sm">Free onsite parking</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Directions quick -->
+        <div class="bg-[#0F172A] border border-gold/20 p-5">
+          <p class="font-sans text-xs text-gold uppercase tracking-widest font-semibold mb-3">Quick Directions</p>
+          <p class="font-sans text-xs text-slate-400 leading-relaxed"><strong class="text-slate-300">From Bay Bridge:</strong> Van Ness exit → Left on Lombard → Lombard & Pierce.</p>
+          <p class="font-sans text-xs text-slate-400 leading-relaxed mt-2"><strong class="text-slate-300">From Golden Gate:</strong> Follow 101 South onto Lombard → Lombard & Pierce.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PRESS / RECOGNITION
+═══════════════════════════════════════════════ -->
+<section class="py-16 bg-surface border-y border-outline-dim">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16">
+    <p class="font-sans text-xs text-slate-600 uppercase tracking-widest text-center mb-8">As Seen In & Recognized By</p>
+    <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+      <div class="text-center opacity-40 hover:opacity-80 transition-opacity">
+        <p class="font-serif text-lg font-bold text-slate-300">Coin World</p>
+        <p class="font-sans text-xs text-slate-500">Top 100 Numismatists</p>
+      </div>
+      <div class="text-center opacity-40 hover:opacity-80 transition-opacity">
+        <p class="font-serif text-lg font-bold text-slate-300">COINage</p>
+        <p class="font-sans text-xs text-slate-500">Greatest Coin Graders</p>
+      </div>
+      <div class="text-center opacity-40 hover:opacity-80 transition-opacity">
+        <p class="font-serif text-lg font-bold text-slate-300">Red Book</p>
+        <p class="font-sans text-xs text-slate-500">Contributing Author</p>
+      </div>
+      <div class="text-center opacity-40 hover:opacity-80 transition-opacity">
+        <p class="font-serif text-lg font-bold text-slate-300">ANA</p>
+        <p class="font-sans text-xs text-slate-500">Board of Governors</p>
+      </div>
+      <div class="text-center opacity-40 hover:opacity-80 transition-opacity">
+        <p class="font-serif text-lg font-bold text-slate-300">Whatnot</p>
+        <p class="font-sans text-xs text-slate-500">Top Coin Seller</p>
+      </div>
+      <div class="text-center opacity-40 hover:opacity-80 transition-opacity">
+        <p class="font-serif text-lg font-bold text-slate-300">eBay Live</p>
+        <p class="font-sans text-xs text-slate-500">Featured Seller</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     NEWSLETTER
+═══════════════════════════════════════════════ -->
+<section class="py-20 bg-[#0F172A]">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16 text-center">
+    <div class="max-w-xl mx-auto">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <div class="gold-divider"></div>
+        <span class="font-sans text-xs text-gold uppercase tracking-[0.2em] font-semibold">Stay Informed</span>
+        <div class="gold-divider"></div>
+      </div>
+      <h2 class="font-serif text-3xl lg:text-4xl font-bold text-white mb-3">New Arrivals & Auction Alerts</h2>
+      <p class="font-sans text-slate-400 text-sm mb-8">Join thousands of collectors. Be first to know about rare acquisitions, upcoming auctions, and the SF Coin Scavenger Hunt.</p>
+      <form class="flex gap-0 max-w-md mx-auto" onsubmit="return false;">
+        <input
+          type="email"
+          placeholder="Your email address"
+          class="flex-1 bg-surface-high border border-outline-dim border-r-0 text-white placeholder-slate-600 font-sans text-sm px-4 py-3 focus:outline-none focus:border-gold transition-colors"
+        />
+        <button type="submit" class="bg-gold hover:bg-gold-dark text-slate-900 font-sans font-bold text-xs uppercase tracking-widest px-6 py-3 transition-colors shrink-0">
+          Subscribe
+        </button>
+      </form>
+      <p class="font-sans text-xs text-slate-600 mt-3">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer class="bg-[#020617] border-t border-slate-800">
+  <!-- Main footer grid -->
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-16 py-16">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 lg:gap-16">
+
+      <!-- Brand column -->
+      <div class="col-span-2 md:col-span-1">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-7 h-7 rounded-full bg-gold flex items-center justify-center">
+            <span class="text-slate-900 font-serif font-bold text-xs">W</span>
+          </div>
+          <span class="font-serif font-bold text-lg text-gold">Witter Coin</span>
+        </div>
+        <p class="font-sans text-xs text-slate-500 leading-relaxed mb-4">America's Coin Shop. Serving collectors and investors since 1960 in San Francisco.</p>
+        <div class="space-y-1.5">
+          <p class="font-sans text-xs text-slate-500">2299 Lombard St, SF CA 94123</p>
+          <a href="tel:4157815690" class="block font-sans text-xs text-slate-500 hover:text-gold transition-colors">(415) 781-5690</a>
+          <a href="mailto:sales@wittercoin.com" class="block font-sans text-xs text-slate-500 hover:text-gold transition-colors">sales@wittercoin.com</a>
+        </div>
+        <div class="flex gap-3 mt-5">
+          <a href="#" class="w-8 h-8 border border-slate-800 hover:border-gold flex items-center justify-center text-slate-500 hover:text-gold transition-colors">
+            <span class="material-symbols-outlined" style="font-size:16px">photo_camera</span>
+          </a>
+          <a href="#" class="w-8 h-8 border border-slate-800 hover:border-gold flex items-center justify-center text-slate-500 hover:text-gold transition-colors">
+            <span class="material-symbols-outlined" style="font-size:16px">play_circle</span>
+          </a>
+          <a href="#" class="w-8 h-8 border border-slate-800 hover:border-gold flex items-center justify-center text-slate-500 hover:text-gold transition-colors">
+            <span class="material-symbols-outlined" style="font-size:16px">storefront</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Shop -->
+      <div>
+        <h4 class="font-sans text-xs font-bold text-white uppercase tracking-widest mb-4">Shop</h4>
+        <ul class="space-y-2.5">
+          <li><a href="shop.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Rare Coins</a></li>
+          <li><a href="shop.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Gold Coins</a></li>
+          <li><a href="shop.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Silver Coins</a></li>
+          <li><a href="shop.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Bullion</a></li>
+          <li><a href="shop.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Paper Money</a></li>
+          <li><a href="shop.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Watches & Jewelry</a></li>
+          <li><a href="shop.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Auctions</a></li>
+        </ul>
+      </div>
+
+      <!-- Sell & Services -->
+      <div>
+        <h4 class="font-sans text-xs font-bold text-white uppercase tracking-widest mb-4">Sell & Services</h4>
+        <ul class="space-y-2.5">
+          <li><a href="sell-to-us.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Sell to Us</a></li>
+          <li><a href="sell-to-us.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Free Appraisals</a></li>
+          <li><a href="sell-to-us.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Estate Buying</a></li>
+          <li><a href="about.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Coin Grading Guide</a></li>
+          <li><a href="about.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">WCU Nonprofit</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="font-sans text-xs font-bold text-white uppercase tracking-widest mb-4">Company</h4>
+        <ul class="space-y-2.5">
+          <li><a href="about.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Our Story</a></li>
+          <li><a href="about.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Meet Seth Chandler</a></li>
+          <li><a href="visit.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Visit Us</a></li>
+          <li><a href="#" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Terms of Service</a></li>
+          <li><a href="#" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Privacy Policy</a></li>
+          <li><a href="visit.html" class="font-sans text-xs text-slate-500 hover:text-gold transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-slate-900 py-6 px-6 lg:px-16">
+    <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="font-sans text-xs text-slate-600">© 2024 Witter Coin. All rights reserved. Member of PNG and ANA.</p>
+      <div class="flex items-center gap-6">
+        <span class="font-sans text-xs text-slate-700 uppercase tracking-wider">PCGS Authorized</span>
+        <span class="w-px h-3 bg-slate-800"></span>
+        <span class="font-sans text-xs text-slate-700 uppercase tracking-wider">NGC Dealer</span>
+        <span class="w-px h-3 bg-slate-800"></span>
+        <span class="font-sans text-xs text-slate-700 uppercase tracking-wider">CAC Co-Founder</span>
+        <span class="w-px h-3 bg-slate-800"></span>
+        <span class="font-sans text-xs text-slate-700 uppercase tracking-wider">ANA Member</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════ -->
+<script>
+  // Mobile menu toggle
+  document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  });
+
+  // Scroll fade-in animation
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  fadeEls.forEach(el => observer.observe(el));
+
+  // Sticky nav shadow on scroll
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      nav.classList.add('shadow-2xl');
+    } else {
+      nav.classList.remove('shadow-2xl');
+    }
+  });
+</script>
+
+</body>
+</html>
